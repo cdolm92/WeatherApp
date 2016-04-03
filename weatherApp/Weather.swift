@@ -21,13 +21,13 @@ class Weather {
     private var _windSpeed: Float!
     private var _precipProbability: Float!
     
-    private var _dayOfWeek: String!
+    private var _dayOfWeek: [String] = []
     private var _dailyTemperatureMin: Float!
     private var _dailyTemperatureMax: Float!
     private var _dailyIcon: String!
 
     
-    private var _hour: String!
+    private var _hour: [String] = []
     private var _hourTemperature: Float!
     private var _hourIcon: String!
     
@@ -58,7 +58,7 @@ class Weather {
         return _precipProbability
     }
     
-    var dayOfWeek: String {
+    var dayOfWeek: [String]? {
         return _dayOfWeek
     }
     
@@ -70,7 +70,7 @@ class Weather {
         return _dailyTemperatureMax
     }
     
-    var hour: String {
+    var hour: [String]? {
         return _hour
     }
     
@@ -113,11 +113,11 @@ class Weather {
                         }
                         
                         
-                        // todays/current weather
-                        print(self._weatherSummary)
-                        print(self._currentTemperature)
-                        print(self._windSpeed)
-                        print(self._precipProbability)
+//                        // todays/current weather
+//                        print(self._weatherSummary)
+//                        print(self._currentTemperature)
+//                        print(self._windSpeed)
+//                        print(self._precipProbability)
                     
                         if let dailyDict = dict["daily"] as? Dictionary<String,AnyObject> {
                             if let dailyForecast = dailyDict["data"] as? [Dictionary<String, AnyObject>] where dailyForecast.count > 0 {
@@ -130,9 +130,9 @@ class Weather {
                                         self._temperatureMax = todaysTempMax
                                     }
                                 
-                                // todays/current forecast
-                                print(self._temperatureMin)
-                                print(self._temperatureMax)
+//                                // todays/current forecast
+//                                print(self._temperatureMin)
+//                                print(self._temperatureMax)
                                 
                                 //getting weekly forecast
                                 for x in 1...dailyForecast.count-1 {
@@ -146,7 +146,7 @@ class Weather {
                                         
                                         let dayOfWeek = dateFormatter.stringFromDate(date)
                                         
-                                        self._dayOfWeek = dayOfWeek
+                                       self._dayOfWeek.append(dayOfWeek)
                                         
                                     }
                                     
@@ -162,12 +162,12 @@ class Weather {
                                     
                                     if let dailyIcon = dailyForecast[x]["icon"] as? String {
                                     
-                                        print(dailyIcon)
+                                        //print(dailyIcon)
                                     }
                                     
-                                    print(self._dayOfWeek)
-                                    print(self._dailyTemperatureMin)
-                                    print(self._dailyTemperatureMax)
+                                     // print(self._dayOfWeek)
+//                                    print(self._dailyTemperatureMin)
+//                                    print(self._dailyTemperatureMax)
                                 }
                             }
                         }
@@ -185,7 +185,7 @@ class Weather {
                                         
                                         let time = dateFormatter.stringFromDate(date)
 
-                                        self._hour = time
+                                       self._hour.append(time)
                                     }
                                     
                                     if let hourTemp = hourlyForecast[j]["temperature"] as? Float {
@@ -195,11 +195,11 @@ class Weather {
                                     
                                     if let hourIcon = hourlyForecast[j]["icon"] as? String {
                                         
-                                        print(hourIcon)
+//                                        print(hourIcon)
                                     }
-                                    
-                                    print(self._hour)
-                                    print(self._hourTemperature)
+                                
+                                        print(self._hour)
+//                                    print(self._hourTemperature)
                                 }
                             }
                         }
