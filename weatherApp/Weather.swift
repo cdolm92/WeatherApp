@@ -88,7 +88,7 @@ class Weather {
                         }
                         
                         
-                        //current weather
+                        // todays/current weather
                         print(self._weatherSummary)
                         print(self._currentTemperature)
                         print(self._windSpeed)
@@ -96,6 +96,7 @@ class Weather {
                     
                         if let dailyDict = dict["daily"] as? Dictionary<String,AnyObject> {
                             if let dailyForecast = dailyDict["data"] as? [Dictionary<String, AnyObject>] where dailyForecast.count > 0 {
+                                
                                     if let todaysTempMin = dailyForecast[0]["temperatureMin"] as? Float {
                                         self._temperatureMin = todaysTempMin
                                     }
@@ -104,17 +105,34 @@ class Weather {
                                         self._temperatureMax = todaysTempMax
                                     }
                                 
+                                // todays/current forecast
                                 print(self._temperatureMin)
                                 print(self._temperatureMax)
                                 
+                                //getting weekly forecast
+                                for x in 1...dailyForecast.count-1 {
+                                    if let timestamps = dailyForecast[x]["time"] as? Int {
+                                    
+                                        print(timestamps)
+                                    
+                                    }
+                                    
+                                    if let dailyTempMin = dailyForecast[x]["temperatureMin"] as? Float {
+                                        
+                                        print(dailyTempMin)
+                                    }
+                                    
+                                    if let dailyTempMax = dailyForecast[x]["temperatureMax"] as? Float {
+                                        
+                                        print(dailyTempMax)
+                                    }
+                                    
+                                    
+                                }
                             }
-                            
                         }
-                        
-                        
-                        
-                    }
                 }
             }
+        }
     }
 }
