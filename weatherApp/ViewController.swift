@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var weather = Weather(latitude: 40.838252, longitude: -73.856609)
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        weather.downloadWeatherDetails { () -> () in self}
     }
 
     override func didReceiveMemoryWarning() {
