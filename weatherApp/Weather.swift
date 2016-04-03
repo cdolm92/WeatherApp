@@ -129,7 +129,10 @@ class Weather {
                                         print(dailyTempMax)
                                     }
                                     
+                                    if let dailyIcon = dailyForecast[x]["icon"] as? String {
                                     
+                                        print(dailyIcon)
+                                    }
                                 }
                             }
                         }
@@ -152,8 +155,8 @@ class Weather {
                                 }
                             }
                         }
+                    }
                 }
             }
-        }
     }
 }
