@@ -183,9 +183,9 @@ class Weather {
                                         
                                         dateFormatter.dateFormat = "ha"
                                         
-                                        let hour = dateFormatter.stringFromDate(date)
-//
-                                        self._hour = hour
+                                        let time = dateFormatter.stringFromDate(date)
+
+                                        self._hour = time
                                     }
                                     
                                     if let hourTemp = hourlyForecast[j]["temperature"] as? Float {
