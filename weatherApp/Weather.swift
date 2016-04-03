@@ -75,7 +75,44 @@ class Weather {
                             self._weatherSummary = summary
                         }
                         
+                        if let currentTemperature = currentForecast["temperature"] as? Float {
+                            self._currentTemperature = currentTemperature
+                        }
+                        
+                        if let windSpeed = currentForecast["windSpeed"] as? Float {
+                            self._windSpeed = windSpeed
+                        }
+                        
+                        if let precipProbability = currentForecast["precipProbability"] as? Float {
+                            self._precipProbability = precipProbability
+                        }
+                        
+                        
+                        //current weather
                         print(self._weatherSummary)
+                        print(self._currentTemperature)
+                        print(self._windSpeed)
+                        print(self._precipProbability)
+                    
+                        if let dailyDict = dict["daily"] as? Dictionary<String,AnyObject> {
+                            if let dailyForecast = dailyDict["data"] as? [Dictionary<String, AnyObject>] where dailyForecast.count > 0 {
+                                    if let todaysTempMin = dailyForecast[0]["temperatureMin"] as? Float {
+                                        self._temperatureMin = todaysTempMin
+                                    }
+                                
+                                    if let todaysTempMax = dailyForecast[0]["temperatureMax"] as? Float {
+                                        self._temperatureMax = todaysTempMax
+                                    }
+                                
+                                print(self._temperatureMin)
+                                print(self._temperatureMax)
+                                
+                            }
+                            
+                        }
+                        
+                        
+                        
                     }
                 }
             }
