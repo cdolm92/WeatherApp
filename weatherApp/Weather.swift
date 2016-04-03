@@ -21,14 +21,16 @@ class Weather {
     private var _windSpeed: Float!
     private var _precipProbability: Float!
     
+    private var _dayOfWeek: String!
+    private var _dailyTemperatureMin: Float!
+    private var _dailyTemperatureMax: Float!
+    private var _dailyIcon: String!
+
+    
     private var _hour: Int!
     private var _hourTemperature: Float!
     private var _hourIcon: String!
     
-    private var _dailyTime: Int!
-    private var _dailyTemperatureMin: Float!
-    private var _dailyTemperatureMax: Float!
-    private var _dailyIcon: String!
     
     private var _forecastURL: String!
 
@@ -55,6 +57,19 @@ class Weather {
     var precipProbability: Float {
         return _precipProbability
     }
+    
+    var dayOfWeek: String {
+        return _dayOfWeek
+    }
+    
+    var dailyTemperatureMin: Float {
+        return _dailyTemperatureMin
+    }
+    
+    var dailyTemperatureMax: Float {
+        return _dailyTemperatureMax
+    }
+
     
     init(latitude: Float, longitude: Float) {
         self._latitude = latitude
@@ -113,26 +128,38 @@ class Weather {
                                 
                                 //getting weekly forecast
                                 for x in 1...dailyForecast.count-1 {
-                                    if let timestamps = dailyForecast[x]["time"] as? Int {
-                                    
-                                        print(timestamps)
-                                    
+                                    if let timestamps = dailyForecast[x]["time"] as? Double {
+                                        
+                                        let date = NSDate(timeIntervalSince1970: timestamps)
+                                        
+                                        let dateFormatter = NSDateFormatter()
+                                        
+                                        dateFormatter.dateFormat = "EEEE"
+                                        
+                                        let dayOfWeek = dateFormatter.stringFromDate(date)
+                                        
+                                        self._dayOfWeek = dayOfWeek
+                                        
                                     }
                                     
                                     if let dailyTempMin = dailyForecast[x]["temperatureMin"] as? Float {
+                                        self._dailyTemperatureMin = dailyTempMin
                                         
-                                        print(dailyTempMin)
                                     }
                                     
                                     if let dailyTempMax = dailyForecast[x]["temperatureMax"] as? Float {
                                         
-                                        print(dailyTempMax)
+                                        self._dailyTemperatureMax = dailyTempMax
                                     }
                                     
                                     if let dailyIcon = dailyForecast[x]["icon"] as? String {
                                     
                                         print(dailyIcon)
                                     }
+                                    
+                                    print(self._dayOfWeek)
+                                    print(self._dailyTemperatureMin)
+                                    print(self._dailyTemperatureMax)
                                 }
                             }
                         }
