@@ -27,7 +27,7 @@ class Weather {
     private var _dailyIcon: String!
 
     
-    private var _hour: Int!
+    private var _hour: String!
     private var _hourTemperature: Float!
     private var _hourIcon: String!
     
@@ -68,6 +68,14 @@ class Weather {
     
     var dailyTemperatureMax: Float {
         return _dailyTemperatureMax
+    }
+    
+    var hour: String {
+        return _hour
+    }
+    
+    var hourTemperature: Float {
+        return _hourTemperature
     }
 
     
@@ -167,18 +175,31 @@ class Weather {
                         if let hourlyDict = dict["hourly"] as? Dictionary<String,AnyObject> {
                             if let hourlyForecast = hourlyDict["data"] as? [Dictionary<String, AnyObject>] where hourlyForecast.count > 0 {
                                 for j in 0...hourlyForecast.count-1 {
-                                    if let hour = hourlyForecast[j]["time"] as? Int {
+                                    if let hour = hourlyForecast[j]["time"] as? Double {
                                         
-                                        print(hour)
+                                        let date = NSDate(timeIntervalSince1970: hour)
+                                        
+                                        let dateFormatter = NSDateFormatter()
+                                        
+                                        dateFormatter.dateFormat = "ha"
+                                        
+                                        let hour = dateFormatter.stringFromDate(date)
+//
+                                        self._hour = hour
                                     }
+                                    
+                                    if let hourTemp = hourlyForecast[j]["temperature"] as? Float {
+                                        
+                                        self._hourTemperature = hourTemp
+                                    }
+                                    
                                     if let hourIcon = hourlyForecast[j]["icon"] as? String {
                                         
                                         print(hourIcon)
                                     }
-                                    if let hourTemp = hourlyForecast[j]["temperature"] as? Float {
-                                        
-                                        print(hourTemp)
-                                    }
+                                    
+                                    print(self._hour)
+                                    print(self._hourTemperature)
                                 }
                             }
                         }
