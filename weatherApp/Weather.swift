@@ -21,12 +21,14 @@ class Weather {
     private var _windSpeed: Float!
     private var _precipProbability: Float!
     
-    private var _hourTime: Int!
-    private var _hourlyTemperature: Float!
+    private var _hour: Int!
+    private var _hourTemperature: Float!
+    private var _hourIcon: String!
     
     private var _dailyTime: Int!
     private var _dailyTemperatureMin: Float!
     private var _dailyTemperatureMax: Float!
+    private var _dailyIcon: String!
     
     private var _forecastURL: String!
 
@@ -128,6 +130,25 @@ class Weather {
                                     }
                                     
                                     
+                                }
+                            }
+                        }
+                        
+                        if let hourlyDict = dict["hourly"] as? Dictionary<String,AnyObject> {
+                            if let hourlyForecast = hourlyDict["data"] as? [Dictionary<String, AnyObject>] where hourlyForecast.count > 0 {
+                                for j in 0...hourlyForecast.count-1 {
+                                    if let hour = hourlyForecast[j]["time"] as? Int {
+                                        
+                                        print(hour)
+                                    }
+                                    if let hourIcon = hourlyForecast[j]["icon"] as? String {
+                                        
+                                        print(hourIcon)
+                                    }
+                                    if let hourTemp = hourlyForecast[j]["temperature"] as? Float {
+                                        
+                                        print(hourTemp)
+                                    }
                                 }
                             }
                         }
