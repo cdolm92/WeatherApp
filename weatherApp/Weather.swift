@@ -70,7 +70,7 @@ class Weather {
         return _dailyTemperatureMax
     }
     
-    var hour: [String]? {
+    var hour: [String] {
         return _hour
     }
     

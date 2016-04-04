@@ -20,7 +20,7 @@ class HourlyWeatherCell: UICollectionViewCell {
         layer .cornerRadius = 2.5
     }
     
-    func configureCell(weather: Weather) {
+    func configureCell(weather: String) {
         
     }
     

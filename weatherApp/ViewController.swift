@@ -33,16 +33,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("HourlyWeatherCell", forIndexPath: indexPath) as? UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("HourlyWeatherCell", forIndexPath: indexPath) as? HourlyWeatherCell {
+            
+            let hourlyForecast: String!
+            
+            hourlyForecast = weather.hour[indexPath.row]
+            
+             cell.configureCell(hourlyForecast)
             
             return cell
+        } else {
+            return UICollectionViewCell()
         }
-        return UICollectionViewCell()
     
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return weather.hour.count
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
