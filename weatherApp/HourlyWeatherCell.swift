@@ -23,7 +23,7 @@ class HourlyWeatherCell: UICollectionViewCell {
     func configureCell(weather: String) {
         
         
-            hourLbl.text = "\(weather)"
+            hourLbl.text = "cool"
         
        
         TempLbl.text = "nice"

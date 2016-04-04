@@ -15,7 +15,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     var weather = Weather(latitude: 40.838252, longitude: -73.856609)
-    var hoursArr = [String]()
+    
+    var stuff = ["thing1", "thing2", "thing3", "thing4", "thing5", "thing6", "thing7"]
+   // var hoursArr = [String]()
     
     
 
@@ -23,17 +25,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         collection.delegate = self
         collection.dataSource = self
+        
         weather.downloadWeatherDetails { () -> () in
             self.updateData()
             self.updateUI()
         }
-        
-//        for x in 0...self.weather.hour.count {
-//            forecast.append("\(x)")
-//        }
-    
-//
-        
+     
         
     }
     
@@ -43,9 +40,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func updateData() {
-        self.hoursArr = self.weather.hour
+       // self.hoursArr = self.weather.hour
         
-        print("hoursARR: \(self.hoursArr)")
+        print("hoursARR: \(self.weather.hour)")
         
     }
     
@@ -60,18 +57,26 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             let hourlyForecast: String!
             
-            hourlyForecast = self.hoursArr[indexPath.row]
+            hourlyForecast = self.stuff[indexPath.row]
             cell.configureCell(hourlyForecast)
+            
             
             return cell
         } else {
+            
             return UICollectionViewCell()
         }
     
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.hoursArr.count
+        
+        
+
+      print(self.stuff.count)
+        return self.stuff.count
+        //self.weather.hour.count
+        
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

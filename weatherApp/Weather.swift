@@ -185,7 +185,7 @@ class Weather {
                         
                         if let hourlyDict = dict["hourly"] as? Dictionary<String,AnyObject> {
                             if let hourlyForecast = hourlyDict["data"] as? [Dictionary<String, AnyObject>] where hourlyForecast.count > 0 {
-                                for j in 0...hourlyForecast.count-1 {
+                                for j in 0...hourlyForecast.count-24 {
                                     if let hour = hourlyForecast[j]["time"] as? Double {
                                         
                                         let date = NSDate(timeIntervalSince1970: hour)
@@ -216,8 +216,9 @@ class Weather {
 //                                    print(self._hourTemperature)
                                     
                                    }
-                                 self._hour = self.hourly
-                                print(self._hour)
+                                
+                                self._hour = self.hourly
+                                
                                 
                             }
                         }
@@ -225,8 +226,10 @@ class Weather {
                         
                     }
                     
-                    completed()
+                   
                 }
+                
+                completed()
             }
         
     }
