@@ -33,8 +33,13 @@ class Weather {
     
     
     private var _forecastURL: String!
+    
+     var hourly = [String]()
 
     var weatherSummary: String {
+        if _weatherSummary == nil {
+            _weatherSummary = ""
+        }
         return _weatherSummary
     }
     
@@ -71,6 +76,7 @@ class Weather {
     }
     
     var hour: [String] {
+       
         return _hour
     }
     
@@ -86,7 +92,11 @@ class Weather {
         _forecastURL = "\(URL_BASE)\(URL_WEATHER)\(self._latitude),\(self._longitude)"
         
         print(_forecastURL)
+        
+       
     }
+    
+    
     
     func downloadWeatherDetails(completed: DownloadComplete) {
         let url = NSURL(string: _forecastURL)!
@@ -113,8 +123,9 @@ class Weather {
                         }
                         
                         
+                        
 //                        // todays/current weather
-//                        print(self._weatherSummary)
+                        print(self._weatherSummary)
 //                        print(self._currentTemperature)
 //                        print(self._windSpeed)
 //                        print(self._precipProbability)
@@ -184,11 +195,14 @@ class Weather {
                                         dateFormatter.dateFormat = "ha"
                                         
                                         let time = dateFormatter.stringFromDate(date)
-
-                                       self._hour.append(time)
+                                        
+                                       
+                                        
+                                        self.hourly.append(time)
+                                        
                                     }
                                     
-                                    if let hourTemp = hourlyForecast[j]["temperature"] as? Float {
+                                   if let hourTemp = hourlyForecast[j]["temperature"] as? Float {
                                         
                                         self._hourTemperature = hourTemp
                                     }
@@ -198,13 +212,23 @@ class Weather {
 //                                        print(hourIcon)
                                     }
                                 
-                                        print("From Class:\(self._hour)")
+                                    
 //                                    print(self._hourTemperature)
-                                }
+                                    
+                                   }
+                                 self._hour = self.hourly
+                                print(self._hour)
+                                
                             }
                         }
+                        
+                        
                     }
+                    
+                    completed()
                 }
             }
+        
     }
+    
 }

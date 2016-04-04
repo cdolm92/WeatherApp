@@ -11,10 +11,11 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collection: UICollectionView!
+    @IBOutlet weak var currentWeatherStatusLbl: UILabel!
     
     
     var weather = Weather(latitude: 40.838252, longitude: -73.856609)
-   // var forecast = [String]()
+    var hoursArr = [String]()
     
     
 
@@ -22,16 +23,32 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         collection.delegate = self
         collection.dataSource = self
-        weather.downloadWeatherDetails { () -> () in self}
+        weather.downloadWeatherDetails { () -> () in
+            self.updateData()
+            self.updateUI()
+        }
         
 //        for x in 0...self.weather.hour.count {
 //            forecast.append("\(x)")
 //        }
     
 //
-        print(" in VC: \(self.weather.hour)")
+        
         
     }
+    
+    func updateUI() {
+        currentWeatherStatusLbl.text = weather.weatherSummary
+        
+    }
+    
+    func updateData() {
+        self.hoursArr = self.weather.hour
+        
+        print("hoursARR: \(self.hoursArr)")
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,7 +60,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             let hourlyForecast: String!
             
-            hourlyForecast = weather.hour[indexPath.row]
+            hourlyForecast = self.hoursArr[indexPath.row]
             cell.configureCell(hourlyForecast)
             
             return cell
@@ -54,7 +71,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return weather.hour.count
+        return self.hoursArr.count
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
