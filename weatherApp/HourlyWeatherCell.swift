@@ -12,7 +12,7 @@ class HourlyWeatherCell: UICollectionViewCell {
     @IBOutlet weak var hourLbl: UILabel!
     @IBOutlet weak var TempLbl: UILabel!
     
-    var weather: Weather!
+    var weather: String!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -22,6 +22,12 @@ class HourlyWeatherCell: UICollectionViewCell {
     
     func configureCell(weather: String) {
         
+        
+            hourLbl.text = "\(weather)"
+        
+       
+        TempLbl.text = "nice"
+    
     }
     
     

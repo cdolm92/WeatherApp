@@ -16,6 +16,7 @@
 		F779335A1CAC91350092B701 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77933581CAC91350092B701 /* Main.storyboard */; };
 		F779335C1CAC91350092B701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F779335B1CAC91350092B701 /* Assets.xcassets */; };
 		F779335F1CAC91350092B701 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F779335D1CAC91350092B701 /* LaunchScreen.storyboard */; };
+		F7B98CFE1CB20489005CAB85 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7B98CFD1CB20489005CAB85 /* Lato-Light.ttf */; };
 		F7DB3B671CACD4290001EA0E /* Lato2OFL in Resources */ = {isa = PBXBuildFile; fileRef = F7DB3B661CACD4290001EA0E /* Lato2OFL */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		F779335B1CAC91350092B701 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F779335E1CAC91350092B701 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F77933601CAC91350092B701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7B98CFD1CB20489005CAB85 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		F7DB3B661CACD4290001EA0E /* Lato2OFL */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Lato2OFL; path = ../Lato2OFL; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 		F718EB391CB09D89004102ED /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F7B98CFD1CB20489005CAB85 /* Lato-Light.ttf */,
 				F7DB3B661CACD4290001EA0E /* Lato2OFL */,
 				F71E38171CB0CE4100D1AA34 /* Constants.swift */,
 			);
@@ -194,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7B98CFE1CB20489005CAB85 /* Lato-Light.ttf in Resources */,
 				F779335F1CAC91350092B701 /* LaunchScreen.storyboard in Resources */,
 				F779335C1CAC91350092B701 /* Assets.xcassets in Resources */,
 				F779335A1CAC91350092B701 /* Main.storyboard in Resources */,

@@ -14,6 +14,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     var weather = Weather(latitude: 40.838252, longitude: -73.856609)
+   // var forecast = [String]()
     
     
 
@@ -23,7 +24,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collection.dataSource = self
         weather.downloadWeatherDetails { () -> () in self}
         
-        
+//        for x in 0...self.weather.hour.count {
+//            forecast.append("\(x)")
+//        }
+    
+//
+        print(" in VC: \(self.weather.hour)")
         
     }
 
@@ -38,8 +44,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let hourlyForecast: String!
             
             hourlyForecast = weather.hour[indexPath.row]
-            
-             cell.configureCell(hourlyForecast)
+            cell.configureCell(hourlyForecast)
             
             return cell
         } else {
@@ -58,7 +63,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        return CGSizeMake(25, 50)
+        return CGSizeMake(100, 100)
         
     }
 }

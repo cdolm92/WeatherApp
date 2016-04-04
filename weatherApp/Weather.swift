@@ -198,7 +198,7 @@ class Weather {
 //                                        print(hourIcon)
                                     }
                                 
-                                        print(self._hour)
+                                        print("From Class:\(self._hour)")
 //                                    print(self._hourTemperature)
                                 }
                             }
