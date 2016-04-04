@@ -29,10 +29,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         weather.downloadWeatherDetails { () -> () in
             self.updateData()
             self.updateUI()
+            self.collection.reloadData()
         }
+        
+    
+        
      
         
     }
+    
+    
+    
+    
     
     func updateUI() {
         currentWeatherStatusLbl.text = weather.weatherSummary
@@ -53,11 +61,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("HourlyWeatherCell", forIndexPath: indexPath) as? HourlyWeatherCell {
             
             let hourlyForecast: String!
             
-            hourlyForecast = self.stuff[indexPath.row]
+            hourlyForecast = self.weather.hour[indexPath.row]
             cell.configureCell(hourlyForecast)
             
             
@@ -73,9 +82,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         
 
-      print(self.stuff.count)
-        return self.stuff.count
-        //self.weather.hour.count
+      print("\(self.weather.hour.count)")
+        return self.weather.hour.count
+
+        //self.stuff.count
         
     }
     
