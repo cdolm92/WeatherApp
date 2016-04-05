@@ -28,13 +28,11 @@ class Weather {
 
     
     private var _hour: [String] = []
-    private var _hourTemperature: Float!
+    private var _hourTemperature: [Float] = []
     private var _hourIcon: String!
     
     
     private var _forecastURL: String!
-    
-     var hourly = [String]()
 
     var weatherSummary: String {
         if _weatherSummary == nil {
@@ -76,13 +74,17 @@ class Weather {
     }
     
     var hour: [String] {
-       
         return _hour
     }
     
-    var hourTemperature: Float {
-        return _hourTemperature
+    var hourTemperature: [Float] {
+      return _hourTemperature
+       
+        
+        
     }
+
+   
 
     
     init(latitude: Float, longitude: Float) {
@@ -198,13 +200,15 @@ class Weather {
                                         
                                        
                                         
-                                        self.hourly.append(time)
+                                        self._hour.append(time)
                                         
                                     }
                                     
                                    if let hourTemp = hourlyForecast[j]["temperature"] as? Float {
+                                    
+                                       let roundedHourTemp = round(hourTemp)
                                         
-                                        self._hourTemperature = hourTemp
+                                        self._hourTemperature.append(roundedHourTemp)
                                     }
                                     
                                     if let hourIcon = hourlyForecast[j]["icon"] as? String {
@@ -213,12 +217,13 @@ class Weather {
                                     }
                                 
                                     
-//                                    print(self._hourTemperature)
+                                   
                                     
                                    }
                                 
-                                self._hour = self.hourly
+                              
                                 
+                                 print(self._hourTemperature)
                                 
                             }
                         }

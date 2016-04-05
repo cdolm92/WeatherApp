@@ -12,7 +12,8 @@ class HourlyWeatherCell: UICollectionViewCell {
     @IBOutlet weak var hourLbl: UILabel!
     @IBOutlet weak var TempLbl: UILabel!
     
-    var weather: String!
+    var hour: String!
+    var temp: Float!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -20,15 +21,16 @@ class HourlyWeatherCell: UICollectionViewCell {
         layer .cornerRadius = 2.5
     }
     
-    func configureCell(weather: String) {
+    func configureCell(hour: String, temp: Float) {
         
         
-        self.weather = weather
+        self.hour = hour
         
-        hourLbl.text = self.weather
-        
+        hourLbl.text = self.hour
        
-        TempLbl.text = "nice"
+        self.temp = temp
+       
+        TempLbl.text = "\(self.temp)"
     
     }
     

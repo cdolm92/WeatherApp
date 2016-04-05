@@ -16,9 +16,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var weather = Weather(latitude: 40.838252, longitude: -73.856609)
     
-    var stuff = ["thing1", "thing2", "thing3", "thing4", "thing5", "thing6", "thing7"]
-   // var hoursArr = [String]()
-    
+    var dummyarr: [Float] = [49.0, 41.2, 33.0]
     
 
     override func viewDidLoad() {
@@ -32,7 +30,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             self.collection.reloadData()
         }
         
-    
+        
         
      
         
@@ -51,6 +49,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
        // self.hoursArr = self.weather.hour
         
         print("hoursARR: \(self.weather.hour)")
+       
         
     }
     
@@ -65,9 +64,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("HourlyWeatherCell", forIndexPath: indexPath) as? HourlyWeatherCell {
             
             let hourlyForecast: String!
+            var hourlyTemp: Float!
             
             hourlyForecast = self.weather.hour[indexPath.row]
-            cell.configureCell(hourlyForecast)
+            
+//            for x in 0...self.weather.hourTemperature.count-1 {
+//                hourlyTemp = self.weather.hourTemperature[x]
+//                print(hourlyTemp)
+//            
+//            }
+            
+            
+            
+            hourlyTemp = self.weather.hourTemperature[indexPath.row]
+            cell.configureCell(hourlyForecast, temp: hourlyTemp)
             
             
             return cell
@@ -81,11 +91,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         
-
-      print("\(self.weather.hour.count)")
+       // print(self.dummyarr.count)
         return self.weather.hour.count
 
-        //self.stuff.count
         
     }
     
