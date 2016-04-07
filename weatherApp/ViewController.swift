@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var currentWeatherStatusLbl: UILabel!
     
+    @IBOutlet weak var tableView: UITableView!
     
     var weather = Weather(latitude: 40.838252, longitude: -73.856609)
     
@@ -23,6 +24,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         collection.delegate = self
         collection.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         
         weather.downloadWeatherDetails { () -> () in
             self.updateData()

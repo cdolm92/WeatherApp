@@ -149,7 +149,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="580" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zot-i2-N71" id="aSQ-rD-erS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="580" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="580" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -204,6 +204,7 @@
                     <connections>
                         <outlet property="collection" destination="g1y-TG-lQa" id="aZ7-XN-29q"/>
                         <outlet property="currentWeatherStatusLbl" destination="o7w-nR-7dM" id="IEU-id-9cS"/>
+                        <outlet property="tableView" destination="LM9-FI-Gy6" id="cBp-ah-Nnp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bww-65-Co8" userLabel="First Responder" sceneMemberID="firstResponder"/>
