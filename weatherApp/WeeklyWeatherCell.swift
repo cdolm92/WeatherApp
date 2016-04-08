@@ -11,18 +11,24 @@ import UIKit
 class WeeklyWeatherCell: UITableViewCell {
     
     @IBOutlet weak var dayOfWeekLbl: UILabel!
+    @IBOutlet weak var tempMinMaxLbl: UILabel!
     
     var weekDay: String!
+    var tempMin: Float!
+    var tempMax: Float!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func configureCell(day: String) {
+    func configureCell(day: String, tempMin:Float, tempMax: Float) {
         self.weekDay = day
+        self.tempMin = tempMin
+        self.tempMax = tempMax
         
         dayOfWeekLbl.text = self.weekDay
+        tempMinMaxLbl.text = "\(self.tempMin)/\(self.tempMax)"
     }
 
 }

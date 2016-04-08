@@ -22,8 +22,8 @@ class Weather {
     private var _precipProbability: Float!
     
     private var _dayOfWeek: [String] = []
-    private var _dailyTemperatureMin: Float!
-    private var _dailyTemperatureMax: Float!
+    private var _dailyTemperatureMin: [Float] = []
+    private var _dailyTemperatureMax: [Float] = []
     private var _dailyIcon: String!
 
     
@@ -65,11 +65,11 @@ class Weather {
         return _dayOfWeek
     }
     
-    var dailyTemperatureMin: Float {
+    var dailyTemperatureMin: [Float] {
         return _dailyTemperatureMin
     }
     
-    var dailyTemperatureMax: Float {
+    var dailyTemperatureMax: [Float] {
         return _dailyTemperatureMax
     }
     
@@ -164,13 +164,18 @@ class Weather {
                                     }
                                     
                                     if let dailyTempMin = dailyForecast[x]["temperatureMin"] as? Float {
-                                        self._dailyTemperatureMin = dailyTempMin
+                                        
+                                        let roundedDailyTempMin = round(dailyTempMin)
+                                        
+                                        self._dailyTemperatureMin.append(roundedDailyTempMin)
                                         
                                     }
                                     
                                     if let dailyTempMax = dailyForecast[x]["temperatureMax"] as? Float {
                                         
-                                        self._dailyTemperatureMax = dailyTempMax
+                                        let roundedDailyTempMax = round(dailyTempMax)
+                                        
+                                        self._dailyTemperatureMax.append(roundedDailyTempMax)
                                     }
                                     
                                     if let dailyIcon = dailyForecast[x]["icon"] as? String {
@@ -222,8 +227,6 @@ class Weather {
                                    }
                                 
                               
-                                
-                                 print(self._hourTemperature)
                                 
                             }
                         }

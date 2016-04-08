@@ -17,9 +17,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var weather = Weather(latitude: 40.838252, longitude: -73.856609)
     
-    var dummyarr: [Float] = [49.0, 41.2, 33.0]
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         collection.delegate = self
@@ -35,10 +32,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
     }
-    
-    
-    
-    
     
     func updateUI() {
         currentWeatherStatusLbl.text = weather.weatherSummary
@@ -67,15 +60,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             var hourlyTemp: Float!
             
             hourlyForecast = self.weather.hour[indexPath.row]
-            
-//            for x in 0...self.weather.hourTemperature.count-1 {
-//                hourlyTemp = self.weather.hourTemperature[x]
-//                print(hourlyTemp)
-//            
-//            }
-            
-            
-            
             hourlyTemp = self.weather.hourTemperature[indexPath.row]
             cell.configureCell(hourlyForecast, temp: hourlyTemp)
             
@@ -90,8 +74,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        
-       // print(self.dummyarr.count)
+      
         return self.weather.hour.count
 
         
@@ -110,8 +93,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier("WeeklyWeatherCell") as? WeeklyWeatherCell {
+            
             let weekday = self.weather.dayOfWeek[indexPath.row]
-            cell.configureCell(weekday)
+            let tempMin = self.weather.dailyTemperatureMin[indexPath.row]
+            let tempMax = self.weather.dailyTemperatureMax[indexPath.row]
+            
+            cell.configureCell(weekday, tempMin: tempMin, tempMax: tempMax)
+            
             return cell
                 
             } else {

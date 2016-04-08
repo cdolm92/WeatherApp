@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Light.ttf">
@@ -149,7 +150,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="580" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zot-i2-N71" id="aSQ-rD-erS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="580" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="580" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSu-kY-8fA">
@@ -158,10 +159,27 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mG3-B0-6UR">
+                                                            <rect key="frame" x="528" y="14" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="mG3-B0-6UR" firstAttribute="centerX" secondItem="aSQ-rD-erS" secondAttribute="centerX" id="Klg-9T-0cA"/>
+                                                        <constraint firstItem="mG3-B0-6UR" firstAttribute="top" secondItem="aSQ-rD-erS" secondAttribute="topMargin" constant="6" id="hvm-Ov-uhe"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mG3-B0-6UR" secondAttribute="trailing" constant="10" id="zlM-jE-c07"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Klg-9T-0cA"/>
+                                                        </mask>
+                                                    </variation>
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="dayOfWeekLbl" destination="dSu-kY-8fA" id="iDi-Bg-4vK"/>
+                                                    <outlet property="tempMinMaxLbl" destination="mG3-B0-6UR" id="raL-o0-9L8"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
