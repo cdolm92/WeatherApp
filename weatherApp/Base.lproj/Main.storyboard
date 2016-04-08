@@ -102,6 +102,7 @@
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="TempLbl" destination="0lB-ZA-bdj" id="Dq7-Mn-kqC"/>
+                                                        <outlet property="hourIconImage" destination="p3j-5r-8vn" id="0nm-yA-G4e"/>
                                                         <outlet property="hourLbl" destination="doT-du-MEO" id="AzI-Wx-Rzf"/>
                                                     </connections>
                                                 </collectionViewCell>

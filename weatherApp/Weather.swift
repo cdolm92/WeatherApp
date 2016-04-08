@@ -83,11 +83,11 @@ class Weather {
     
     var hourTemperature: [Float] {
       return _hourTemperature
-       
-        
-        
     }
-
+    
+    var hourIcon: [String] {
+        return _hourIcon
+    }
    
 
     
@@ -222,7 +222,7 @@ class Weather {
                                     
                                     if let hourIcon = hourlyForecast[j]["icon"] as? String {
                                         
-//                                        print(hourIcon)
+                                        self._hourIcon.append(hourIcon)
                                     }
                                 
                                     

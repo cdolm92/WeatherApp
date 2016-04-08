@@ -58,10 +58,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             let hourlyForecast: String!
             var hourlyTemp: Float!
+            let hourIcon: String!
             
             hourlyForecast = self.weather.hour[indexPath.row]
             hourlyTemp = self.weather.hourTemperature[indexPath.row]
-            cell.configureCell(hourlyForecast, temp: hourlyTemp)
+            hourIcon = self.weather.hourIcon[indexPath.row]
+            cell.configureCell(hourlyForecast, temp: hourlyTemp, icon: hourIcon)
             
             
             return cell
