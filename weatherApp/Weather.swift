@@ -61,7 +61,7 @@ class Weather {
         return _precipProbability
     }
     
-    var dayOfWeek: [String]? {
+    var dayOfWeek: [String] {
         return _dayOfWeek
     }
     

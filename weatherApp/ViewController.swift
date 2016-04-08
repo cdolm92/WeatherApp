@@ -31,11 +31,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             self.updateData()
             self.updateUI()
             self.collection.reloadData()
+            self.tableView.reloadData()
         }
-        
-        
-        
-     
         
     }
     
@@ -108,6 +105,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         return CGSizeMake(100, 100)
         
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier("WeeklyWeatherCell") as? WeeklyWeatherCell {
+            let weekday = self.weather.dayOfWeek[indexPath.row]
+            cell.configureCell(weekday)
+            return cell
+                
+            } else {
+                return WeeklyWeatherCell()
+            }
+        
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.weather.dayOfWeek.count
     }
 }
 
