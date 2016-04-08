@@ -12,6 +12,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var currentWeatherStatusLbl: UILabel!
+    @IBOutlet weak var currentTempLbl: UILabel!
+    @IBOutlet weak var minMaxTempLbl: UILabel!
+    @IBOutlet weak var windSpeedLbl: UILabel!
+    @IBOutlet weak var chanceOfRainLbl: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,7 +29,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         tableView.dataSource = self
         
         weather.downloadWeatherDetails { () -> () in
-            self.updateData()
             self.updateUI()
             self.collection.reloadData()
             self.tableView.reloadData()
@@ -35,18 +38,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func updateUI() {
         currentWeatherStatusLbl.text = weather.weatherSummary
+        currentTempLbl.text = "\(weather.currentTemperature)"
+        minMaxTempLbl.text = "\(weather.temperatureMin)/\(weather.temperatureMax)"
         
     }
-    
-    func updateData() {
-       // self.hoursArr = self.weather.hour
-        
-        print("hoursARR: \(self.weather.hour)")
-       
-        
-    }
-    
-
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

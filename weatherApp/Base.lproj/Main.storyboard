@@ -150,7 +150,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="580" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zot-i2-N71" id="aSQ-rD-erS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="580" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="580" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSu-kY-8fA">
@@ -231,9 +231,13 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="chanceOfRainLbl" destination="qKo-wQ-FAm" id="QEw-26-Pk2"/>
                         <outlet property="collection" destination="g1y-TG-lQa" id="aZ7-XN-29q"/>
+                        <outlet property="currentTempLbl" destination="vIF-Ee-nBU" id="WkL-1E-FQl"/>
                         <outlet property="currentWeatherStatusLbl" destination="o7w-nR-7dM" id="IEU-id-9cS"/>
+                        <outlet property="minMaxTempLbl" destination="xwl-1g-9Bh" id="Xcg-kw-CMN"/>
                         <outlet property="tableView" destination="LM9-FI-Gy6" id="cBp-ah-Nnp"/>
+                        <outlet property="windSpeedLbl" destination="34s-XS-GED" id="Kv5-aH-9uc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bww-65-Co8" userLabel="First Responder" sceneMemberID="firstResponder"/>
