@@ -24,12 +24,12 @@ class Weather {
     private var _dayOfWeek: [String] = []
     private var _dailyTemperatureMin: [Float] = []
     private var _dailyTemperatureMax: [Float] = []
-    private var _dailyIcon: String!
+    private var _dailyIcon: [String] = []
 
     
     private var _hour: [String] = []
     private var _hourTemperature: [Float] = []
-    private var _hourIcon: String!
+    private var _hourIcon: [String] = []
     
     
     private var _forecastURL: String!
@@ -71,6 +71,10 @@ class Weather {
     
     var dailyTemperatureMax: [Float] {
         return _dailyTemperatureMax
+    }
+    
+    var dailyIcon: [String] {
+        return _dailyIcon
     }
     
     var hour: [String] {
@@ -180,7 +184,7 @@ class Weather {
                                     
                                     if let dailyIcon = dailyForecast[x]["icon"] as? String {
                                     
-                                        //print(dailyIcon)
+                                        self._dailyIcon.append(dailyIcon)
                                     }
                                     
                                      // print(self._dayOfWeek)

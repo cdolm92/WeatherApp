@@ -97,8 +97,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let weekday = self.weather.dayOfWeek[indexPath.row]
             let tempMin = self.weather.dailyTemperatureMin[indexPath.row]
             let tempMax = self.weather.dailyTemperatureMax[indexPath.row]
+            let icon = self.weather.dailyIcon[indexPath.row]
             
-            cell.configureCell(weekday, tempMin: tempMin, tempMax: tempMax)
+            cell.configureCell(weekday, tempMin: tempMin, tempMax: tempMax, dailyIcon: icon)
             
             return cell
                 
