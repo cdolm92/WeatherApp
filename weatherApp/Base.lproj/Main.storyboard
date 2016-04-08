@@ -67,25 +67,35 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="91" height="90"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lB-ZA-bdj">
-                                                                <rect key="frame" x="30" y="75.5" width="31" height="16"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="49°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lB-ZA-bdj">
+                                                                <rect key="frame" x="32" y="76" width="27" height="16"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doT-du-MEO">
-                                                                <rect key="frame" x="30" y="27" width="31" height="16"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doT-du-MEO">
+                                                                <rect key="frame" x="32" y="27" width="28" height="16"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="p3j-5r-8vn">
+                                                                <rect key="frame" x="35" y="50" width="20" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="20" id="QDV-fL-afO"/>
+                                                                    <constraint firstAttribute="height" constant="20" id="jrE-7K-YWZ"/>
+                                                                </constraints>
+                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="p3j-5r-8vn" firstAttribute="top" secondItem="doT-du-MEO" secondAttribute="bottom" constant="7" id="44F-58-rOO"/>
                                                         <constraint firstItem="0lB-ZA-bdj" firstAttribute="centerX" secondItem="2Jq-np-wBF" secondAttribute="centerX" id="9AD-QV-xsY"/>
+                                                        <constraint firstItem="p3j-5r-8vn" firstAttribute="centerX" secondItem="2Jq-np-wBF" secondAttribute="centerX" constant="-0.5" id="HwH-da-rQl"/>
                                                         <constraint firstItem="doT-du-MEO" firstAttribute="leading" secondItem="0lB-ZA-bdj" secondAttribute="leading" id="NFJ-95-F7M"/>
+                                                        <constraint firstItem="p3j-5r-8vn" firstAttribute="centerY" secondItem="2Jq-np-wBF" secondAttribute="centerY" constant="15.5" id="ZWg-OY-2lq"/>
                                                         <constraint firstItem="0lB-ZA-bdj" firstAttribute="top" secondItem="doT-du-MEO" secondAttribute="bottom" constant="32.5" id="ake-Lr-Oqc"/>
                                                         <constraint firstItem="doT-du-MEO" firstAttribute="centerX" secondItem="2Jq-np-wBF" secondAttribute="centerX" id="jgw-Lc-khU"/>
                                                         <constraint firstItem="doT-du-MEO" firstAttribute="top" secondItem="2Jq-np-wBF" secondAttribute="topMargin" constant="19" id="pbs-H4-Udu"/>
@@ -119,24 +129,33 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="580" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSu-kY-8fA">
-                                                                <rect key="frame" x="19" y="11" width="40" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSu-kY-8fA">
+                                                                <rect key="frame" x="19" y="11" width="62" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mG3-B0-6UR">
-                                                                <rect key="frame" x="530" y="14" width="40" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54°/49°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mG3-B0-6UR">
+                                                                <rect key="frame" x="508" y="14" width="62" height="21"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thunderstorm" translatesAutoresizingMaskIntoConstraints="NO" id="Fw8-gZ-L1C">
+                                                                <rect key="frame" x="277" y="9" width="26" height="26"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="26" id="6Yd-v7-IQO"/>
+                                                                    <constraint firstAttribute="height" constant="26" id="Dpj-h1-nek"/>
+                                                                </constraints>
+                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="mG3-B0-6UR" firstAttribute="centerX" secondItem="aSQ-rD-erS" secondAttribute="centerX" id="Klg-9T-0cA"/>
+                                                            <constraint firstItem="Fw8-gZ-L1C" firstAttribute="centerY" secondItem="aSQ-rD-erS" secondAttribute="centerY" id="Xh5-74-qXN"/>
                                                             <constraint firstItem="dSu-kY-8fA" firstAttribute="leading" secondItem="aSQ-rD-erS" secondAttribute="leadingMargin" constant="11" id="fp2-Hh-ySD"/>
                                                             <constraint firstItem="mG3-B0-6UR" firstAttribute="top" secondItem="aSQ-rD-erS" secondAttribute="topMargin" constant="6" id="hvm-Ov-uhe"/>
+                                                            <constraint firstItem="Fw8-gZ-L1C" firstAttribute="centerX" secondItem="aSQ-rD-erS" secondAttribute="centerX" id="i3A-ha-guQ"/>
                                                             <constraint firstItem="dSu-kY-8fA" firstAttribute="centerY" secondItem="aSQ-rD-erS" secondAttribute="centerY" id="wIr-3D-MKo"/>
                                                             <constraint firstAttribute="trailing" secondItem="mG3-B0-6UR" secondAttribute="trailing" constant="10" id="zlM-jE-c07"/>
                                                         </constraints>
@@ -297,10 +316,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bww-65-Co8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="331.5"/>
+            <point key="canvasLocation" x="385" y="331"/>
         </scene>
     </scenes>
     <resources>
         <image name="balloons" width="1280" height="960"/>
+        <image name="clear-day" width="288" height="288"/>
+        <image name="thunderstorm" width="336" height="246"/>
     </resources>
 </document>
