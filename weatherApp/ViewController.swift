@@ -40,6 +40,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         currentWeatherStatusLbl.text = weather.weatherSummary
         currentTempLbl.text = "\(Int(weather.currentTemperature))°"
         minMaxTempLbl.text = "\(Int(weather.temperatureMin))° / \(Int(weather.temperatureMax))°"
+        windSpeedLbl.text = "Wind: \(Int(weather.windSpeed)) MPH"
+        chanceOfRainLbl.text = "Chance of Rain: \(Int(weather.precipProbability)) %"
         
     }
     
