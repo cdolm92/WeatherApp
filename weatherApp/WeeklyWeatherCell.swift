@@ -28,7 +28,7 @@ class WeeklyWeatherCell: UITableViewCell {
         self.tempMax = tempMax
         
         dayOfWeekLbl.text = self.weekDay
-        tempMinMaxLbl.text = "\(self.tempMin)/\(self.tempMax)"
+        tempMinMaxLbl.text = "\(Int(self.tempMin))° / \(Int(self.tempMax))°"
     }
 
 }

@@ -30,7 +30,7 @@ class HourlyWeatherCell: UICollectionViewCell {
        
         self.temp = temp
        
-        TempLbl.text = "\(self.temp)"
+        TempLbl.text = "\(Int(self.temp))°"
     
     }
     

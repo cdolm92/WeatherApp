@@ -38,10 +38,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func updateUI() {
         currentWeatherStatusLbl.text = weather.weatherSummary
-        currentTempLbl.text = "\(weather.currentTemperature)"
-        minMaxTempLbl.text = "\(weather.temperatureMin)/\(weather.temperatureMax)"
+        currentTempLbl.text = "\(Int(weather.currentTemperature))°"
+        minMaxTempLbl.text = "\(Int(weather.temperatureMin))° / \(Int(weather.temperatureMax))°"
         
     }
+    
+    
   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

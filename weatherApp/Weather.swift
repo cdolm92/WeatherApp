@@ -113,7 +113,7 @@ class Weather {
                         }
                         
                         if let currentTemperature = currentForecast["temperature"] as? Float {
-                            self._currentTemperature = currentTemperature
+                            self._currentTemperature = round(currentTemperature)
                         }
                         
                         if let windSpeed = currentForecast["windSpeed"] as? Float {
@@ -136,11 +136,11 @@ class Weather {
                             if let dailyForecast = dailyDict["data"] as? [Dictionary<String, AnyObject>] where dailyForecast.count > 0 {
                                 
                                     if let todaysTempMin = dailyForecast[0]["temperatureMin"] as? Float {
-                                        self._temperatureMin = todaysTempMin
+                                        self._temperatureMin = round(todaysTempMin)
                                     }
                                 
                                     if let todaysTempMax = dailyForecast[0]["temperatureMax"] as? Float {
-                                        self._temperatureMax = todaysTempMax
+                                        self._temperatureMax = round(todaysTempMax)
                                     }
                                 
 //                                // todays/current forecast
