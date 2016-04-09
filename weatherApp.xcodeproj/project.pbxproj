@@ -19,6 +19,7 @@
 		F79B0A871CB73F4C00B168F5 /* WeeklyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B0A861CB73F4C00B168F5 /* WeeklyWeatherCell.swift */; };
 		F7B98CFE1CB20489005CAB85 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7B98CFD1CB20489005CAB85 /* Lato-Light.ttf */; };
 		F7DB3B671CACD4290001EA0E /* Lato2OFL in Resources */ = {isa = PBXBuildFile; fileRef = F7DB3B661CACD4290001EA0E /* Lato2OFL */; };
+		F7F0AD721CB89DCF00E3B6CF /* SearchCityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F0AD711CB89DCF00E3B6CF /* SearchCityVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F79B0A861CB73F4C00B168F5 /* WeeklyWeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherCell.swift; sourceTree = "<group>"; };
 		F7B98CFD1CB20489005CAB85 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		F7DB3B661CACD4290001EA0E /* Lato2OFL */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Lato2OFL; path = ../Lato2OFL; sourceTree = "<group>"; };
+		F7F0AD711CB89DCF00E3B6CF /* SearchCityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCityVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				F77933561CAC91350092B701 /* ViewController.swift */,
+				F7F0AD711CB89DCF00E3B6CF /* SearchCityVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				F77933551CAC91350092B701 /* AppDelegate.swift in Sources */,
 				F79B0A871CB73F4C00B168F5 /* WeeklyWeatherCell.swift in Sources */,
 				F71E38181CB0CE4100D1AA34 /* Constants.swift in Sources */,
+				F7F0AD721CB89DCF00E3B6CF /* SearchCityVC.swift in Sources */,
 				F7737AFE1CB1C6D1007DE1D1 /* HourlyWeatherCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -321,10 +321,10 @@
             </objects>
             <point key="canvasLocation" x="385" y="331"/>
         </scene>
-        <!--View Controller-->
+        <!--Search CityVC-->
         <scene sceneID="e0i-nE-Cbe">
             <objects>
-                <viewController id="lJg-tC-Uyy" sceneMemberID="viewController">
+                <viewController id="lJg-tC-Uyy" customClass="SearchCityVC" customModule="weatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KK9-Mj-FDk"/>
                         <viewControllerLayoutGuide type="bottom" id="koY-ja-1j4"/>
@@ -341,6 +341,46 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dOq-Eg-2e7">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zh3-jH-cO5">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="83"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="83" id="1Ol-dd-FGY"/>
+                                            </constraints>
+                                        </view>
+                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rm-6E-ot3">
+                                            <rect key="frame" x="0.0" y="86" width="600" height="514"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaB-rl-grx">
+                                            <rect key="frame" x="0.0" y="83" width="600" height="1"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="GXO-aj-gIX"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oaB-rl-grx" firstAttribute="leading" secondItem="dOq-Eg-2e7" secondAttribute="leading" id="Cbd-gP-Y5N"/>
+                                        <constraint firstItem="8Rm-6E-ot3" firstAttribute="leading" secondItem="dOq-Eg-2e7" secondAttribute="leading" id="L2m-OV-xHi"/>
+                                        <constraint firstItem="oaB-rl-grx" firstAttribute="top" secondItem="Zh3-jH-cO5" secondAttribute="bottom" id="Zbi-Q0-ju0"/>
+                                        <constraint firstAttribute="trailing" secondItem="oaB-rl-grx" secondAttribute="trailing" id="bZh-2u-WOX"/>
+                                        <constraint firstItem="Zh3-jH-cO5" firstAttribute="leading" secondItem="dOq-Eg-2e7" secondAttribute="leading" id="baB-uc-aTR"/>
+                                        <constraint firstAttribute="trailing" secondItem="8Rm-6E-ot3" secondAttribute="trailing" id="hcw-bQ-lru"/>
+                                        <constraint firstAttribute="bottom" secondItem="8Rm-6E-ot3" secondAttribute="bottom" id="pg1-dd-Prh"/>
+                                        <constraint firstItem="8Rm-6E-ot3" firstAttribute="top" secondItem="Zh3-jH-cO5" secondAttribute="bottom" constant="2" id="pmf-Vy-Kly"/>
+                                        <constraint firstItem="8Rm-6E-ot3" firstAttribute="top" secondItem="oaB-rl-grx" secondAttribute="bottom" constant="2" id="uLh-8h-5sX"/>
+                                        <constraint firstItem="8Rm-6E-ot3" firstAttribute="top" secondItem="dOq-Eg-2e7" secondAttribute="top" constant="62" id="uOx-ci-S3b"/>
+                                        <constraint firstItem="Zh3-jH-cO5" firstAttribute="top" secondItem="dOq-Eg-2e7" secondAttribute="top" id="uTF-oG-UBn"/>
+                                        <constraint firstAttribute="trailing" secondItem="Zh3-jH-cO5" secondAttribute="trailing" id="yLB-we-cGm"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="pmf-Vy-Kly"/>
+                                            <exclude reference="uOx-ci-S3b"/>
+                                        </mask>
+                                    </variation>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
