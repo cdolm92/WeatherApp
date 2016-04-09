@@ -8,36 +8,37 @@
 
 import UIKit
 
-class SearchCityVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchCityVC: UIViewController // UITableViewDelegate, UITableViewDataSource
+{
     
-    @IBOutlet weak var tableView: UITableView!
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+//        tableView.delegate = self
+//        tableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
-
+/*
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        <#code#>
+      return UITableViewCell()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 10
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        <#code#>
+        return 1
     }
-    
+   */
     
     
 

@@ -152,7 +152,7 @@ class Weather {
 //                                print(self._temperatureMax)
                                 
                                 //getting weekly forecast
-                                for x in 1...dailyForecast.count-1 {
+                                for x in 0...dailyForecast.count-1 {
                                     if let timestamps = dailyForecast[x]["time"] as? Double {
                                         
                                         let date = NSDate(timeIntervalSince1970: timestamps)
