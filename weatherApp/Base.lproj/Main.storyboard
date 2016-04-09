@@ -22,7 +22,6 @@
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
-            <string>Lato-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -47,7 +46,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g1y-TG-lQa">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g1y-TG-lQa">
                                             <rect key="frame" x="10" y="360" width="580" height="90"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -205,18 +204,20 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="oVn-AJ-11l">
-                                <rect key="frame" x="20" y="25" width="560" height="30"/>
+                                <rect key="frame" x="20" y="4" width="560" height="59"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaK-q8-agf">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="f12-z8-kgG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="40"/>
-                                        <state key="normal" title="+"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpB-oS-Git">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="59"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="lJg-tC-Uyy" kind="presentation" id="V3v-s0-xlF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8M-5I-DDe">
-                                        <rect key="frame" x="530" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="530" y="0.0" width="30" height="59"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="27"/>
                                         <state key="normal" title="C°">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -275,11 +276,11 @@
                             <constraint firstAttribute="trailing" secondItem="oVn-AJ-11l" secondAttribute="trailing" constant="20" id="7tY-RN-WmN"/>
                             <constraint firstAttribute="trailing" secondItem="ooF-K2-0xo" secondAttribute="trailing" constant="10" id="7vb-VR-QmP"/>
                             <constraint firstItem="oVn-AJ-11l" firstAttribute="leading" secondItem="GL8-Ww-DFn" secondAttribute="leading" constant="20" id="BFA-FA-fiP"/>
-                            <constraint firstItem="oVn-AJ-11l" firstAttribute="top" secondItem="pzp-Gb-52Y" secondAttribute="bottom" constant="5" id="GXG-vD-69A"/>
+                            <constraint firstItem="oVn-AJ-11l" firstAttribute="top" secondItem="pzp-Gb-52Y" secondAttribute="bottom" constant="-16" id="GXG-vD-69A"/>
                             <constraint firstItem="vIF-Ee-nBU" firstAttribute="centerX" secondItem="GL8-Ww-DFn" secondAttribute="centerX" id="Lm1-E9-9nv"/>
                             <constraint firstItem="xwl-1g-9Bh" firstAttribute="centerX" secondItem="GL8-Ww-DFn" secondAttribute="centerX" id="PE3-jF-3cP"/>
                             <constraint firstItem="Yif-cR-aFf" firstAttribute="top" secondItem="hbJ-dV-nRU" secondAttribute="bottom" id="QRp-uG-2vE"/>
-                            <constraint firstItem="6Uh-C9-Pun" firstAttribute="top" secondItem="oVn-AJ-11l" secondAttribute="bottom" constant="10" id="SiP-Ut-8Bk"/>
+                            <constraint firstItem="6Uh-C9-Pun" firstAttribute="top" secondItem="oVn-AJ-11l" secondAttribute="bottom" constant="2" id="SiP-Ut-8Bk"/>
                             <constraint firstItem="hbJ-dV-nRU" firstAttribute="top" secondItem="GL8-Ww-DFn" secondAttribute="top" id="Szh-lB-t8O"/>
                             <constraint firstItem="hbJ-dV-nRU" firstAttribute="top" secondItem="pzp-Gb-52Y" secondAttribute="bottom" id="U5m-li-VHk"/>
                             <constraint firstItem="hbJ-dV-nRU" firstAttribute="leading" secondItem="GL8-Ww-DFn" secondAttribute="leading" id="VwE-EI-0Gs"/>
@@ -289,7 +290,7 @@
                             <constraint firstItem="o7w-nR-7dM" firstAttribute="centerX" secondItem="GL8-Ww-DFn" secondAttribute="centerX" id="bQL-66-4aE"/>
                             <constraint firstItem="34s-XS-GED" firstAttribute="centerX" secondItem="GL8-Ww-DFn" secondAttribute="centerX" id="edz-Iy-0d6"/>
                             <constraint firstItem="qKo-wQ-FAm" firstAttribute="top" secondItem="34s-XS-GED" secondAttribute="bottom" constant="3" id="exr-Wn-LHc"/>
-                            <constraint firstItem="fOw-bu-MkZ" firstAttribute="top" secondItem="oVn-AJ-11l" secondAttribute="bottom" constant="-55" id="fmt-ni-vD7"/>
+                            <constraint firstItem="fOw-bu-MkZ" firstAttribute="top" secondItem="oVn-AJ-11l" secondAttribute="bottom" constant="-63" id="fmt-ni-vD7"/>
                             <constraint firstItem="fOw-bu-MkZ" firstAttribute="leading" secondItem="GL8-Ww-DFn" secondAttribute="leading" id="g6W-xv-Py5"/>
                             <constraint firstItem="vIF-Ee-nBU" firstAttribute="top" secondItem="o7w-nR-7dM" secondAttribute="bottom" constant="5" id="iDt-EW-tGz"/>
                             <constraint firstItem="o7w-nR-7dM" firstAttribute="top" secondItem="6Uh-C9-Pun" secondAttribute="bottom" constant="5" id="k0b-Ms-5vP"/>
@@ -319,6 +320,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bww-65-Co8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="385" y="331"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="e0i-nE-Cbe">
+            <objects>
+                <viewController id="lJg-tC-Uyy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KK9-Mj-FDk"/>
+                        <viewControllerLayoutGuide type="bottom" id="koY-ja-1j4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2g2-cs-3yw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balloons" translatesAutoresizingMaskIntoConstraints="NO" id="cjG-3Q-pDD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXA-Xh-0qy">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dOq-Eg-2e7">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EXA-Xh-0qy" firstAttribute="top" secondItem="2g2-cs-3yw" secondAttribute="top" id="NOC-ID-Azn"/>
+                            <constraint firstItem="koY-ja-1j4" firstAttribute="top" secondItem="cjG-3Q-pDD" secondAttribute="bottom" id="WS7-dO-A58"/>
+                            <constraint firstAttribute="trailing" secondItem="EXA-Xh-0qy" secondAttribute="trailing" id="Yma-RB-9qo"/>
+                            <constraint firstItem="cjG-3Q-pDD" firstAttribute="top" secondItem="2g2-cs-3yw" secondAttribute="top" id="aWW-sa-k4g"/>
+                            <constraint firstAttribute="trailing" secondItem="cjG-3Q-pDD" secondAttribute="trailing" id="ebd-52-7bT"/>
+                            <constraint firstItem="cjG-3Q-pDD" firstAttribute="leading" secondItem="2g2-cs-3yw" secondAttribute="leading" id="fXI-a6-TXc"/>
+                            <constraint firstItem="EXA-Xh-0qy" firstAttribute="leading" secondItem="2g2-cs-3yw" secondAttribute="leading" id="z6N-qn-8Pl"/>
+                            <constraint firstItem="koY-ja-1j4" firstAttribute="top" secondItem="EXA-Xh-0qy" secondAttribute="bottom" id="zjX-b9-Dzu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9Z-kS-yoP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063" y="331"/>
         </scene>
     </scenes>
     <resources>

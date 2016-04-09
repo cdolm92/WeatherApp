@@ -121,7 +121,7 @@ class Weather {
                         }
                         
                         if let windSpeed = currentForecast["windSpeed"] as? Float {
-                            self._windSpeed = windSpeed
+                            self._windSpeed = round(windSpeed)
                         }
                         
                         if let precipProbability = currentForecast["precipProbability"] as? Float {
