@@ -47,5 +47,7 @@
 	<array>
 		<string>Lato-Light.ttf</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is used to provide local weather</string>
 </dict>
 </plist>

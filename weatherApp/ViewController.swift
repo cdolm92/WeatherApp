@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import MapKit
+
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
+    
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var currentWeatherStatusLbl: UILabel!
@@ -23,6 +27,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        
+        
+        
+        
+        
         collection.delegate = self
         collection.dataSource = self
         tableView.delegate = self
@@ -117,6 +131,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.weather.dayOfWeek.count
+    }
+}
+
+extension ViewController : CLLocationManagerDelegate {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("location:: \(location)")
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("error:: \(error)")
     }
 }
 

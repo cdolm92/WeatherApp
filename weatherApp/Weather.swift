@@ -125,7 +125,9 @@ class Weather {
                         }
                         
                         if let precipProbability = currentForecast["precipProbability"] as? Float {
-                            self._precipProbability = precipProbability
+                            
+                            
+                            self._precipProbability = precipProbability * 100
                         }
                         
                         
