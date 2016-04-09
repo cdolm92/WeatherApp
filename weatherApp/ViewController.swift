@@ -33,10 +33,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
-        
-        
-        
-        
         collection.delegate = self
         collection.dataSource = self
         tableView.delegate = self
