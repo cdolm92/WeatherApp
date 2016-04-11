@@ -49,8 +49,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            //locationManager.startUpdatingLocation()
         }
 
         
