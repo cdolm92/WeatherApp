@@ -8,11 +8,18 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
+
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
+    var lat: Double?
+    var lang: Double?
+    
+    
+    
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var currentWeatherStatusLbl: UILabel!
@@ -23,20 +30,45 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var tableView: UITableView!
     
-    var weather = Weather(latitude: 40.838252, longitude: -73.856609)
+    
+    var weather: Weather!
+    
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        weather = Weather(latitude: 40.7592 , longitude: -73.9846)
+
+        
+        locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
+     
+        
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+
         
         collection.delegate = self
         collection.dataSource = self
         tableView.delegate = self
         tableView.dataSource = self
+       
+       
+
+        
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        
+       
         
         weather.downloadWeatherDetails { () -> () in
             self.updateUI()
@@ -98,7 +130,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        return CGSizeMake(90, 90)
+        return CGSizeMake(55, 90)
+        
         
     }
     
@@ -128,24 +161,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.weather.dayOfWeek.count
     }
-}
-
-extension ViewController : CLLocationManagerDelegate {
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    
+     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .AuthorizedWhenInUse {
             locationManager.requestLocation()
         }
     }
-    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            print("location:: \(location)")
-        }
+        var userLocation:CLLocation = locations[0] 
+        self.lang = userLocation.coordinate.longitude;
+        self.lat = userLocation.coordinate.latitude;
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    
+    
+     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("error:: \(error)")
+        
     }
+    
 }
 
 

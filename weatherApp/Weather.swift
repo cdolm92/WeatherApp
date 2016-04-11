@@ -9,7 +9,8 @@
 import Foundation
 import Alamofire
 
-class Weather {
+
+class Weather  {
     private var _city: String!
     private var _latitude: Float!
     private var _longitude: Float!
@@ -33,6 +34,8 @@ class Weather {
     
     
     private var _forecastURL: String!
+    
+    
 
     var weatherSummary: String {
         if _weatherSummary == nil {
@@ -88,14 +91,20 @@ class Weather {
     var hourIcon: [String] {
         return _hourIcon
     }
-   
-
     
-    init(latitude: Float, longitude: Float) {
-        self._latitude = latitude
-        self._longitude = longitude
+    var latitude: Double
+    
+    var longitude: Double
+    
+    
+    
+    
+    init(latitude: Double, longitude: Double ){
+        self.latitude = latitude
+        self.longitude = longitude
+       
         
-        _forecastURL = "\(URL_BASE)\(URL_WEATHER)\(self._latitude),\(self._longitude)"
+        _forecastURL = "\(URL_BASE)\(URL_WEATHER)\(self.latitude),\(self.longitude)"
         
         print(_forecastURL)
         
@@ -247,5 +256,6 @@ class Weather {
             }
         
     }
+    
     
 }
