@@ -171,6 +171,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         var userLocation:CLLocation = locations[0] 
         self.lang = userLocation.coordinate.longitude;
         self.lat = userLocation.coordinate.latitude;
+        
+        print("\(self.lang) \(self.lat)")
     }
     
     
